@@ -14,7 +14,6 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game));
     }
 
-    // Баг - в каталоге видна только первая добавленая игра, остальные не видит//
     @Test
     void shouldAddManyGames() {
         GameStore store = new GameStore();
@@ -37,7 +36,6 @@ public class GameStoreTest {
 
     }
 
-    // Баг - Не отображается количество времени 1 игрока в игре//
     @Test
     void shouldAddPlayTimeOfOnePlayer() {
         GameStore store = new GameStore();
@@ -50,7 +48,6 @@ public class GameStoreTest {
         assertEquals(expected,actual);
     }
 
-    // Баг - Не суммируется время игры 1 игрока в игре//
     @Test
     void shouldAddPlayTimeOfOnePlayerInTimePeriod() {
         GameStore store = new GameStore();
@@ -67,7 +64,6 @@ public class GameStoreTest {
         assertEquals(expected,actual);
     }
 
-    // Баг - Не отображается количество времени всех игроков в игре//
     @Test
     void shouldAddPlayTimeOfManyPlayers() {
         GameStore store = new GameStore();
