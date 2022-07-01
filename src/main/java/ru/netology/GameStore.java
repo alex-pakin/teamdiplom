@@ -73,12 +73,10 @@ public class GameStore {
      * за играми этого каталога
      */
     public int getSumPlayedTime() {
-        int sum =0;
-        for (int value : playedTime.values()){
-            sum += value;
+        return 0;
         }
-        return sum;
 
-    }
+
+
 
 }
