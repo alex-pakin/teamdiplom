@@ -21,14 +21,14 @@ public class PlayerTest {
 
         Player player = new Player("Петя");
         player.installGame(game);
-        player.play(game, 3);
+        player.play(game, 555);
 
-        int expected = 3;
+        int expected = 555;
         int actual = player.sumGenre(game.getGenre());
         assertEquals(expected, actual);
 
     }
-    //не суммирует время игрока
+
 
 
     @Test
