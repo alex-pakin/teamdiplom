@@ -45,9 +45,6 @@ public class PlayerTest {
         int actual = player.sumGenre("Гонки");
         assertEquals(expected,actual);
 
-        //не суммирует общее время игр в одном жанре
-
-
 
     }
     @Test
@@ -64,8 +61,6 @@ public class PlayerTest {
         Game actual = player.mostPlayerByGenre(three.getGenre());
         assertEquals(expected,actual);
 
-
-
     }
     @Test
     public void shouldGameNotInstall() {
@@ -77,9 +72,7 @@ public class PlayerTest {
         });
     }
 
-
-
-    }
+}
 
 
 

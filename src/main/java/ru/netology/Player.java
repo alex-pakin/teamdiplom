@@ -35,7 +35,8 @@ public class Player {
         if (playedTime.containsKey(game)) {
             playedTime.put(game, playedTime.get(game) + hours);
         } else {
-            playedTime.put(game, hours);
+            throw new RuntimeException
+                    ("The game" + game.getTitle() + "is not installed by player" + this.name);
         }
         return playedTime.get(game);
     }
