@@ -59,12 +59,11 @@ public class PlayerTest {
 
         player.play(one,5);
         player.play(two,2);
-        player.play(three,1);
-        Game expected = one;
-        Game actual = player.mostPlayerByGenre("5");
+        player.play(three,11);
+        Game expected = three;
+        Game actual = player.mostPlayerByGenre(three.getGenre());
         assertEquals(expected,actual);
 
-        //при попытке вызвать метод, возвращает нулл
 
 
     }
