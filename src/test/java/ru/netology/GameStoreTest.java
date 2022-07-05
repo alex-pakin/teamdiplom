@@ -14,6 +14,7 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game));
     }
 
+
     @Test
     void shouldAddManyGames() {
         GameStore store = new GameStore();
@@ -25,16 +26,16 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game3));
     }
 
-    // Баг - игра в каталоге, при этом считает,что ее нет//
     @Test
     void shouldNotContainGame() {
+        GameStore store = new GameStore();
         GameStore store1 = new GameStore();
-        GameStore store2 = new GameStore();
 
-        Game game = store1.publishGame("Игра 1", "Аркады");
+        Game game = store.publishGame("Игра 1", "Карточная");
+
         assertFalse(store1.containsGame(game));
-
     }
+
 
     @Test
     void shouldAddPlayTimeOfOnePlayer() {
@@ -47,6 +48,7 @@ public class GameStoreTest {
 
         assertEquals(expected,actual);
     }
+
 
     @Test
     void shouldAddPlayTimeOfOnePlayerInTimePeriod() {
@@ -63,6 +65,7 @@ public class GameStoreTest {
 
         assertEquals(expected,actual);
     }
+
 
     @Test
     void shouldAddPlayTimeOfManyPlayers() {
@@ -126,11 +129,12 @@ public class GameStoreTest {
 
         store.addPlayTime("Леша", 2);
         store.addPlayTime("Саша", 2);
-        store.addPlayTime("Аля", 2);
+        store.addPlayTime("Аля", 5);
 
         String actual = store.getMostPlayer();
         String expected = "Аля";
         assertEquals(expected,actual);
     }
+
 
 }
