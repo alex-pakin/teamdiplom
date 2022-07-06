@@ -1,6 +1,7 @@
 package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class PlayerTest {
@@ -12,8 +13,6 @@ public class PlayerTest {
     private Game four = store.publishGame("Игра 4", "Стратегия");
     private Game five = store.publishGame("Игра 5", "Аркады");
     private Game six = store.publishGame("Игра 6", "Гонки");
-
-
 
 
     @Test
@@ -29,6 +28,20 @@ public class PlayerTest {
 
     }
 
+    @Test
+    public void shouldSumGenreIfTwoGame() {
+
+        Player player = new Player("Петя");
+        player.installGame(two);
+        player.installGame(five);
+        player.play(two, 25);
+        player.play(five, 15);
+
+        int expected = 40;
+        int actual = player.sumGenre(game.getGenre());
+        assertEquals(expected, actual);
+
+    }
 
 
     @Test
@@ -38,30 +51,32 @@ public class PlayerTest {
         player.installGame(six);
         player.installGame(five);
 
-        player.play(six,5);
-        player.play(six,4);
+        player.play(six, 5);
+        player.play(six, 4);
 
         int expected = 9;
         int actual = player.sumGenre("Гонки");
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
 
     }
+
     @Test
-    void takGenreReturnsMostPlayedGameOfGenre(){
+    void takGenreReturnsMostPlayedGameOfGenre() {
         Player player = new Player("Петя");
-        player.installGame (one);
-        player.installGame (two);
-        player.installGame (three);
+        player.installGame(two);
+        player.installGame(four);
+        player.installGame(five);
 
-        player.play(one,5);
-        player.play(two,2);
-        player.play(three,11);
-        Game expected = three;
-        Game actual = player.mostPlayerByGenre(three.getGenre());
-        assertEquals(expected,actual);
+        player.play(two, 5);
+        player.play(four, 2);
+        player.play(five, 1);
+        Game expected = two;
+        Game actual = player.mostPlayerByGenre(five.getGenre());
+        assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldGameNotInstall() {
 
@@ -72,7 +87,35 @@ public class PlayerTest {
         });
     }
 
+    @Test
+    void returnsNullIfNotIrraly() {
+        Player player = new Player("Маша");
+        player.installGame(one);
+        player.installGame(two);
+        player.installGame(four);
+
+        player.play(one, 5);
+        player.play(two, 2);
+
+        Game expected = null;
+        Game actual = player.mostPlayerByGenre(four.getGenre());
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void appropriationNamePlayer() {
+        Player player = new Player("Леша");
+        String expected = "Леша";
+        assertEquals(expected, player.getName());
+
+
+    }
+
+
 }
+
+
 
 
 
