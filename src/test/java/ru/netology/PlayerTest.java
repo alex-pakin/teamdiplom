@@ -3,7 +3,7 @@ package ru.netology;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-/*
+
 public class PlayerTest {
     GameStore store = new GameStore();
     Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -73,7 +73,7 @@ public class PlayerTest {
         player.play(four, 2);
         player.play(five, 1);
         Game expected = two;
-        Game actual = player.mostPlayerByGenre(five.getGenre());
+        Game actual = player.mostPlayerByGenre("Аркады");
         assertEquals(expected, actual);
 
     }
@@ -98,9 +98,8 @@ public class PlayerTest {
         player.play(one, 5);
         player.play(two, 2);
 
-        Game expected = null;
         Game actual = player.mostPlayerByGenre(four.getGenre());
-        assertEquals(expected, actual);
+        assertEquals(null, actual);
 
     }
 
@@ -110,6 +109,21 @@ public class PlayerTest {
         String expected = "Леша";
         assertEquals(expected, player.getName());
 
+
+    }
+    @Test
+    void takGenreReturnsMostPlayedGameGenre() {
+        Player player = new Player("Петя");
+        player.installGame(two);
+        player.installGame(four);
+        player.installGame(five);
+
+        player.play(two, 1);
+        player.play(four, 2);
+        player.play(five, 5);
+        Game expected = five;
+        Game actual = player.mostPlayerByGenre(two.getGenre());
+        assertEquals(expected, actual);
 
     }
 
@@ -122,5 +136,5 @@ public class PlayerTest {
 
 
    
-}*/
+
 
