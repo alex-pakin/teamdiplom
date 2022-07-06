@@ -3,7 +3,7 @@ package ru.netology;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-/*
+
 public class PlayerTest {
     GameStore store = new GameStore();
     Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -136,5 +136,5 @@ public class PlayerTest {
 
 
    
-}*/
+
 
