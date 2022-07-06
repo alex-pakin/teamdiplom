@@ -2,7 +2,7 @@ package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
+/*
 public class GameStoreTest {
 
     @Test
@@ -13,6 +13,9 @@ public class GameStoreTest {
 
         assertTrue(store.containsGame(game));
     }
+
+
+     //другие ваши тесты
 
 
     @Test
@@ -137,4 +140,6 @@ public class GameStoreTest {
     }
 
 
+
 }
+*/
