@@ -3,7 +3,7 @@ package ru.netology;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
+/*
 public class PlayerTest {
     GameStore store = new GameStore();
     Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
@@ -15,7 +15,7 @@ public class PlayerTest {
     private Game six = store.publishGame("Игра 6", "Гонки");
 
 
-    @Test
+  @Test
     public void shouldSumGenreIfOneGame() {
 
         Player player = new Player("Петя");
@@ -27,6 +27,7 @@ public class PlayerTest {
         assertEquals(expected, actual);
 
     }
+
 
     @Test
     public void shouldSumGenreIfTwoGame() {
@@ -118,4 +119,8 @@ public class PlayerTest {
 
 
 
+
+
+   
+}*/
 
