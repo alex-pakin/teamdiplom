@@ -29,6 +29,8 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game3));
     }
 
+
+
     @Test
     void shouldNotContainGame() {
         GameStore store = new GameStore();
@@ -38,6 +40,7 @@ public class GameStoreTest {
 
         assertFalse(store1.containsGame(game));
     }
+
 
 
     @Test
