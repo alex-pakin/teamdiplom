@@ -27,6 +27,19 @@ public class GameStoreTest {
     }
 
 
+
+    @Test
+    void shouldNotContainGame() {
+        GameStore store = new GameStore();
+        GameStore store1 = new GameStore();
+
+        Game game = store.publishGame("Игра 1", "Карточная");
+
+        assertFalse(store1.containsGame(game));
+    }
+
+
+
     @Test
     void shouldAddPlayTimeOfOnePlayer() {
         GameStore store = new GameStore();
@@ -125,5 +138,6 @@ public class GameStoreTest {
         String expected = "Аля";
         assertEquals(expected,actual);
     }
+
 
 }
